@@ -1,0 +1,12 @@
+# Данные для загрузки файла
+url = "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt"
+data_dir = "data"
+
+[gitverse]
+token = "$gitverse_token"
+owner = "$gitverse_owner"
+repo_name = "$gitverse_repo_name"
+
+[telegram]
+token = "$telegram_token"
+chat_id = "$telegram_chat_id"
