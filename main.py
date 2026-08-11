@@ -1,9 +1,9 @@
 import os
 import tomllib
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
-import requests
 from dotenv import load_dotenv
 from git import Repo
 from git.exc import InvalidGitRepositoryError
@@ -84,8 +84,12 @@ def send_telegram_message(message):
         "text": message,
         "disable_notification": True,  # Отключение звука уведомлений
     }
-    response = requests.post(url, data=payload)
-    return response.json()
+    data_encoded = urllib.parse.urlencode(payload)
+    data_bytes = data_encoded.encode('utf-8')
+    request = urllib.request.Request(url, data=data_bytes)
+    with urllib.request.urlopen(request) as response:
+        result = response.read().decode('utf-8')
+    return result
 
 def main():
     global cfg
