@@ -1,2 +1,2 @@
 cd /root/mirror_maker/
-uv run main.py
+~/.local/bin/uv run main.py
