@@ -77,6 +77,7 @@ def git_commit_file(path: Path) -> None:
         else:
             print("Удалённый репозиторий синхронизирован с локальным. Нет изменений для загрузки на Gitverse")
             return
+    print("Файл успешно загружен на Gitverse")
     send_telegram_message("Proxy Mirror: на Gitverse обновился файл 26.txt")
 
 def send_telegram_message(message):
