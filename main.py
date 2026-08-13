@@ -39,8 +39,10 @@ def has_local_repo_ahead_commits(repo: Repo) -> bool:
     if local_commit.hexsha != remote_commit.hexsha:
         # Проверяем есть ли в локальном репозитории более поздние коммиты относительно удалённого
         return len(list(repo.iter_commits(f"origin/{active_branch_name}..HEAD"))) > 0
+    else:
+        return False
 
-def is_git_repo(path: str) -> bool:
+def is_git_repo(path: Path) -> bool:
     try:
         _ = Repo(path).git_dir
         return True

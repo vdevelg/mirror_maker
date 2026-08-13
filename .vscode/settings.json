@@ -1,6 +1,13 @@
 {
     "cSpell.words": [
         "dotenv",
-        "webdav"
-    ]
+        "gitpython",
+        "hexsha",
+        "инлайн",
+        "коммиты",
+        "парсингом",
+        "токену",
+        "хэши"
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
